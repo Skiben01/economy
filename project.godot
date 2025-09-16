@@ -26,7 +26,9 @@ enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
 "res://animals/": "orange",
+"res://dev/": "gray",
 "res://plants/": "green",
 "res://world/": "purple"
 }
@@ -35,8 +37,17 @@ folder_colors={
 
 settings/world_size=Vector2i(32, 32)
 
+[input]
+
+walk_to={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
 [layer_names]
 
+2d_physics/layer_1="Wall"
 2d_navigation/layer_1="Animals"
 
 [rendering]

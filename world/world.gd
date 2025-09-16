@@ -20,7 +20,11 @@ func generate_world() -> void:
 	for x in range(world_size.x):
 		for y in range(world_size.y):
 			var sample: float = noise.get_noise_2d(x, y) 
-			BetterTerrain.set_cell(ground, Vector2i(x, y), 0 if sample >= threashold else 1)
+			var is_water: bool = sample >= threashold
+			BetterTerrain.set_cell(ground, Vector2i(x, y), 0 if is_water else 1)
+			
+			if sample <= threashold - 0.35 and not is_water:
+				BetterTerrain.set_cell(ground, Vector2i(x, y), 2)
 	
 	# Updates terrain connections
 	BetterTerrain.update_terrain_area(ground, Rect2i(0,0, world_size.x, world_size.y))

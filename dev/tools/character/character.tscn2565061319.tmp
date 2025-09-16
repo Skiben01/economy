@@ -1,22 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://digxbajxxknuj"]
+[gd_scene load_steps=5 format=3 uid="uid://digxbajxxknuj"]
 
 [ext_resource type="Script" uid="uid://bl6821vxl7ma7" path="res://dev/tools/character/character.gd" id="1_ptx6j"]
 [ext_resource type="Script" uid="uid://cmdse73ipvrnr" path="res://dev/tools/character/walk.gd" id="2_fxp0i"]
 [ext_resource type="Script" uid="uid://bfbmr8dd1ew68" path="res://dev/tools/character/machine.gd" id="2_gxfsc"]
-[ext_resource type="Script" uid="uid://dycm4a5icfgft" path="res://dev/tools/character/idle.gd" id="3_7ya45"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ya45"]
-radius = 5.0
-height = 10.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_wq2q0"]
-font_size = 6
+font_size = 101
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="Node2D"]
 script = ExtResource("1_ptx6j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_7ya45")
 
 [node name="Nav" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
@@ -39,10 +31,6 @@ unique_name_in_owner = true
 script = ExtResource("2_gxfsc")
 
 [node name="Idle" type="LimboState" parent="Machine"]
-script = ExtResource("3_7ya45")
 
 [node name="Walk" type="LimboState" parent="Machine"]
-process_mode = 3
 script = ExtResource("2_fxp0i")
-
-[connection signal="navigation_finished" from="Nav" to="Machine" method="_on_nav_navigation_finished"]
