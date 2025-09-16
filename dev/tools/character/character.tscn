@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://digxbajxxknuj"]
+
+[ext_resource type="Script" uid="uid://bl6821vxl7ma7" path="res://dev/tools/character/character.gd" id="1_ptx6j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wq2q0"]
+font_size = 101
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_ptx6j")
+
+[node name="Nav" type="NavigationAgent2D" parent="."]
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+
+[node name="Label" type="Label" parent="Character/Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "🐇"
+label_settings = SubResource("LabelSettings_wq2q0")

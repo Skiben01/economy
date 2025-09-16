@@ -1,0 +1,313 @@
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://bdn4nku4c5ic2"]
+
+[ext_resource type="Texture2D" uid="uid://dqexfr1rbdb06" path="res://world/tiles/environment/grass.png" id="1_3px1s"]
+[ext_resource type="Texture2D" uid="uid://cvw0c8splyxge" path="res://world/tiles/environment/water.png" id="2_sqdv1"]
+[ext_resource type="Texture2D" uid="uid://brj86ucj8pgpi" path="res://world/tiles/environment/mountain.png" id="3_xpso4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vevg2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_riaag"]
+texture = ExtResource("1_3px1s")
+separation = Vector2i(0, 1)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vevg2")
+0:0/0/metadata/_better_terrain = {
+&"type": 1
+}
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0/terrains_peering_bit/left_side = 0
+0:1/0/terrains_peering_bit/top_left_corner = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+0:1/0/metadata/_better_terrain = {
+&"type": 1
+}
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/probability = 0.1
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/bottom_right_corner = 0
+0:2/0/terrains_peering_bit/bottom_side = 0
+0:2/0/terrains_peering_bit/bottom_left_corner = 0
+0:2/0/terrains_peering_bit/left_side = 0
+0:2/0/terrains_peering_bit/top_left_corner = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+0:2/0/metadata/_better_terrain = {
+&"type": 1
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1h1x"]
+texture = ExtResource("2_sqdv1")
+separation = Vector2i(1, 1)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/terrains_peering_bit/bottom_right_corner = 1
+0:0/0/terrains_peering_bit/bottom_side = 1
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+0:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+7: [1],
+8: [1],
+11: [1],
+12: [1],
+15: [1],
+&"type": 0
+}
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/right_side = 1
+1:0/0/terrains_peering_bit/bottom_right_corner = 1
+1:0/0/terrains_peering_bit/bottom_side = 1
+1:0/0/terrains_peering_bit/bottom_left_corner = 1
+1:0/0/terrains_peering_bit/left_side = 1
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+11: [1],
+12: [1],
+15: [1],
+&"type": 0
+}
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/right_side = 0
+2:0/0/terrains_peering_bit/bottom_right_corner = 0
+2:0/0/terrains_peering_bit/bottom_side = 1
+2:0/0/terrains_peering_bit/bottom_left_corner = 1
+2:0/0/terrains_peering_bit/left_side = 1
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/terrains_peering_bit/top_side = 0
+2:0/0/terrains_peering_bit/top_right_corner = 0
+2:0/0/metadata/_better_terrain = {
+0: [1],
+3: [1],
+4: [0],
+8: [0],
+11: [1],
+12: [1],
+15: [1],
+&"type": 0
+}
+3:0/0 = 0
+3:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+&"type": 0
+}
+4:0/0 = 0
+4:0/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+&"type": 0
+}
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_side = 1
+0:1/0/terrains_peering_bit/bottom_right_corner = 1
+0:1/0/terrains_peering_bit/bottom_side = 1
+0:1/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0/terrains_peering_bit/left_side = 0
+0:1/0/terrains_peering_bit/top_left_corner = 0
+0:1/0/terrains_peering_bit/top_side = 1
+0:1/0/terrains_peering_bit/top_right_corner = 1
+0:1/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+7: [1],
+8: [1],
+11: [1],
+12: [0],
+&"type": 0
+}
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/right_side = 1
+1:1/0/terrains_peering_bit/bottom_right_corner = 1
+1:1/0/terrains_peering_bit/bottom_side = 1
+1:1/0/terrains_peering_bit/bottom_left_corner = 1
+1:1/0/terrains_peering_bit/left_side = 1
+1:1/0/terrains_peering_bit/top_left_corner = 1
+1:1/0/terrains_peering_bit/top_side = 1
+1:1/0/terrains_peering_bit/top_right_corner = 1
+1:1/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+&"type": 0
+}
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/bottom_right_corner = 0
+2:1/0/terrains_peering_bit/bottom_side = 1
+2:1/0/terrains_peering_bit/bottom_left_corner = 1
+2:1/0/terrains_peering_bit/left_side = 1
+2:1/0/terrains_peering_bit/top_left_corner = 1
+2:1/0/terrains_peering_bit/top_side = 1
+2:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0/metadata/_better_terrain = {
+0: [1],
+3: [1],
+4: [0],
+8: [0],
+12: [0],
+15: [1],
+&"type": 0
+}
+3:1/0 = 0
+3:1/0/metadata/_better_terrain = {
+0: [0],
+3: [1],
+4: [0],
+8: [0],
+12: [0],
+&"type": 0
+}
+4:1/0 = 0
+4:1/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+7: [1],
+8: [0],
+12: [0],
+&"type": 0
+}
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrains_peering_bit/right_side = 1
+0:2/0/terrains_peering_bit/bottom_right_corner = 0
+0:2/0/terrains_peering_bit/bottom_side = 0
+0:2/0/terrains_peering_bit/bottom_left_corner = 0
+0:2/0/terrains_peering_bit/left_side = 0
+0:2/0/terrains_peering_bit/top_left_corner = 0
+0:2/0/terrains_peering_bit/top_side = 1
+0:2/0/terrains_peering_bit/top_right_corner = 1
+0:2/0/metadata/_better_terrain = {
+0: [0],
+3: [1],
+4: [1],
+7: [1],
+8: [1],
+11: [1],
+12: [0],
+&"type": 0
+}
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrains_peering_bit/right_side = 1
+1:2/0/terrains_peering_bit/bottom_right_corner = 0
+1:2/0/terrains_peering_bit/bottom_side = 0
+1:2/0/terrains_peering_bit/bottom_left_corner = 0
+1:2/0/terrains_peering_bit/left_side = 1
+1:2/0/terrains_peering_bit/top_left_corner = 1
+1:2/0/terrains_peering_bit/top_side = 1
+1:2/0/terrains_peering_bit/top_right_corner = 1
+1:2/0/metadata/_better_terrain = {
+0: [0],
+3: [1],
+4: [1],
+7: [1],
+8: [0],
+12: [0],
+&"type": 0
+}
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrains_peering_bit/right_side = 0
+2:2/0/terrains_peering_bit/bottom_right_corner = 0
+2:2/0/terrains_peering_bit/bottom_side = 0
+2:2/0/terrains_peering_bit/bottom_left_corner = 0
+2:2/0/terrains_peering_bit/left_side = 1
+2:2/0/terrains_peering_bit/top_left_corner = 1
+2:2/0/terrains_peering_bit/top_side = 1
+2:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0/metadata/_better_terrain = {
+0: [1],
+3: [1],
+4: [1],
+7: [1],
+8: [0],
+12: [0],
+15: [1],
+&"type": 0
+}
+3:2/0 = 0
+3:2/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+15: [1],
+&"type": 0
+}
+4:2/0 = 0
+4:2/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+11: [1],
+12: [0],
+&"type": 0
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1305x"]
+texture = ExtResource("3_xpso4")
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+&"type": 2
+}
+
+[resource]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Grass"
+terrain_set_0/terrain_0/color = Color(0, 0.47127515, 0.07065707, 1)
+terrain_set_0/terrain_1/name = "Water"
+terrain_set_0/terrain_1/color = Color(0, 0.57252896, 0.29500002, 1)
+navigation_layer_0/layers = 1
+sources/3 = SubResource("TileSetAtlasSource_riaag")
+sources/4 = SubResource("TileSetAtlasSource_s1h1x")
+sources/5 = SubResource("TileSetAtlasSource_1305x")
+metadata/_better_terrain = {
+&"decoration": ["Decoration", Color(0.4117647, 0.4117647, 0.4117647, 1), 3, [], {
+&"path": "res://addons/better-terrain/icons/Decoration.svg"
+}],
+&"terrains": [["Water", Color(0.1487732, 0.51793355, 0.76171875, 1), 0, [], {
+&"path": ""
+}], ["Grass", Color(0.071777344, 0.875, 0.29140854, 1), 0, [], {
+&"path": ""
+}], ["Wall", Color(0.033483274, 0.77339804, 0.74768776, 1), 0, [], {
+&"path": ""
+}]],
+&"version": "0.2"
+}
