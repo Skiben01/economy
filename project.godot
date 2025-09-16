@@ -14,6 +14,22 @@ config/name="Economy"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://animals/": "orange",
+"res://plants/": "green",
+"res://world/": "purple"
+}
+
+[game]
+
+settings/world_size=Vector2i(32, 32)
+
+[layer_names]
+
+2d_navigation/layer_1="Animals"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
