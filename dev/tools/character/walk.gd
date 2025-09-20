@@ -18,7 +18,7 @@ func _on_nav_finished() -> void:
 	set_process_input(true)
 
 ## Called on unhandled input. Used to move the character
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("walk_to"):
 		%Nav.target_position = agent.get_viewport().get_mouse_position()
 		dispatch("walk_to")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dllk2wt3pqrt4"]
+[gd_scene load_steps=6 format=3 uid="uid://dllk2wt3pqrt4"]
 
 [ext_resource type="TileSet" uid="uid://bdn4nku4c5ic2" path="res://world/tiles/environment/ground_water.tres" id="1_6xmxd"]
 [ext_resource type="Script" uid="uid://buwptc7sljjeu" path="res://world/world.gd" id="1_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://digxbajxxknuj" path="res://dev/tools/character/character.tscn" id="3_4717r"]
+[ext_resource type="Script" uid="uid://cybp647nqviku" path="res://world/camera_2d.gd" id="4_h5o24"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tcf2h"]
 noise_type = 3
@@ -23,3 +24,6 @@ tile_set = ExtResource("1_6xmxd")
 
 [node name="Character" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(318, 150)
+
+[node name="Cam" type="Camera2D" parent="."]
+script = ExtResource("4_h5o24")
