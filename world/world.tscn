@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bdn4nku4c5ic2" path="res://world/tiles/environment/ground_water.tres" id="1_6xmxd"]
 [ext_resource type="Script" uid="uid://buwptc7sljjeu" path="res://world/world.gd" id="1_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://digxbajxxknuj" path="res://dev/tools/character/character.tscn" id="3_4717r"]
-[ext_resource type="Script" uid="uid://cybp647nqviku" path="res://world/camera_2d.gd" id="4_h5o24"]
+[ext_resource type="Script" uid="uid://kha78qgf3fax" path="res://addons/TopDownCamera2D/top_down_camera_2d.gd" id="4_h5o24"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tcf2h"]
 noise_type = 3
@@ -25,5 +25,13 @@ tile_set = ExtResource("1_6xmxd")
 [node name="Character" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(318, 150)
 
-[node name="Cam" type="Camera2D" parent="."]
+[node name="TopDownCamera2D" type="Camera2D" parent="."]
 script = ExtResource("4_h5o24")
+zoom_in_input = "zoom_in"
+zoom_out_input = "zoom_out"
+zoom_follow_cursor = false
+pan_up_input = "cam_up"
+pan_down_input = "cam_down"
+pan_left_input = "cam_left"
+pan_right_input = "cam_right"
+metadata/_custom_type_script = "uid://kha78qgf3fax"

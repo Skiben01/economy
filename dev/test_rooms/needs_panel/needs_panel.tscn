@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://das40uqrmuv5r"]
+
+[ext_resource type="Script" uid="uid://chleow23xrsu2" path="res://animals/needs/needs_panel/needs_panel.gd" id="1_1jn23"]
+[ext_resource type="Script" uid="uid://0unewvjjg77r" path="res://dev/test_rooms/needs_panel/needs_panel.gd" id="1_h1gyd"]
+[ext_resource type="Script" uid="uid://c03wvgqjt14tf" path="res://animals/needs/manager.gd" id="2_0dgva"]
+[ext_resource type="Script" uid="uid://b0j6n6437ue11" path="res://animals/needs/needs.gd" id="3_h1gyd"]
+[ext_resource type="Script" uid="uid://c7morgmd3jpxo" path="res://dev/test_rooms/needs_panel/label.gd" id="4_0dgva"]
+
+[node name="Control" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1gyd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("manager")]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+script = ExtResource("1_1jn23")
+manager = NodePath("../../../NeedsManager")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Highest Needs Emerged: "
+script = ExtResource("4_0dgva")
+
+[node name="NeedsManager" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("2_0dgva")
+target = NodePath(".")
+metadata/_custom_type_script = "uid://c03wvgqjt14tf"
+
+[node name="Hunger" type="Node" parent="NeedsManager"]
+script = ExtResource("3_h1gyd")
+time_seconds = 120.0
+metadata/_custom_type_script = "uid://b0j6n6437ue11"
+
+[node name="Thirst" type="Node" parent="NeedsManager"]
+script = ExtResource("3_h1gyd")
+time_seconds = 30.0
+metadata/_custom_type_script = "uid://b0j6n6437ue11"
+
+[node name="Mate" type="Node" parent="NeedsManager"]
+script = ExtResource("3_h1gyd")
+time_seconds = 180.0
+metadata/_custom_type_script = "uid://b0j6n6437ue11"
+
+[connection signal="highest_need_emerged" from="NeedsManager" to="MarginContainer/VBoxContainer/Label" method="_on_needs_manager_highest_need_emerged"]
