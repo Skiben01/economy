@@ -5,3 +5,4 @@ extends LimboHSM
 
 func _ready() -> void:
 	add_transition($Idle, $Walk, "walk_to")
+	add_transition($Walk, $Idle, "idle")

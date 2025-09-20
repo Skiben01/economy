@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://digxbajxxknuj"]
+[gd_scene load_steps=11 format=3 uid="uid://digxbajxxknuj"]
 
 [ext_resource type="Script" uid="uid://bl6821vxl7ma7" path="res://dev/tools/character/character.gd" id="1_ptx6j"]
 [ext_resource type="Script" uid="uid://cmdse73ipvrnr" path="res://dev/tools/character/walk.gd" id="2_fxp0i"]
 [ext_resource type="Script" uid="uid://bfbmr8dd1ew68" path="res://dev/tools/character/machine.gd" id="2_gxfsc"]
+[ext_resource type="Texture2D" uid="uid://bidghhhy0b5wu" path="res://icon.svg" id="2_he5rw"]
 [ext_resource type="Script" uid="uid://dycm4a5icfgft" path="res://dev/tools/character/idle.gd" id="3_7ya45"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ya45"]
@@ -10,7 +11,45 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_wq2q0"]
-font_size = 6
+font_size = 71
+
+[sub_resource type="Animation" id="Animation_7ya45"]
+resource_name = "Walk"
+length = 0.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Machine/../Model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_he5rw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Machine/../Model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_he5rw"]
+_data = {
+&"RESET": SubResource("Animation_he5rw"),
+&"Walk": SubResource("Animation_7ya45")
+}
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_ptx6j")
@@ -24,11 +63,17 @@ unique_name_in_owner = true
 [node name="Model" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Model"]
+texture = ExtResource("2_he5rw")
 
 [node name="Label" type="Label" parent="Model/Sprite2D"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -86.0
+offset_right = 52.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "🐇"
@@ -42,7 +87,12 @@ script = ExtResource("2_gxfsc")
 script = ExtResource("3_7ya45")
 
 [node name="Walk" type="LimboState" parent="Machine"]
-process_mode = 3
 script = ExtResource("2_fxp0i")
 
+[node name="Anim" type="AnimationPlayer" parent="Machine/Walk"]
+libraries = {
+&"": SubResource("AnimationLibrary_he5rw")
+}
+
 [connection signal="navigation_finished" from="Nav" to="Machine" method="_on_nav_navigation_finished"]
+[connection signal="navigation_finished" from="Nav" to="Machine/Walk/Anim" method="play" binds= ["RESET"]]
